@@ -8,4 +8,17 @@
 export default {}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  z-index: 10;
+}
+
+a.logo {
+  &:hover {
+    text-decoration: none;
+  }
+}
+</style>

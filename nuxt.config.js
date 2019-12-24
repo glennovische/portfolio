@@ -13,7 +13,14 @@ export default {
         content: 'Portfolio - Glenn Dutrieux'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans&display=swap'
+      }
+    ]
   },
   /*
    ** Customize the progress bar color
@@ -28,6 +35,7 @@ export default {
    */
 
   modules: ['bootstrap-vue/nuxt', 'nuxt-fullpage.js', '@nuxtjs/font-awesome'],
+  plugins: [],
   /*
    ** Build configuration
    */

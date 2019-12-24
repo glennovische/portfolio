@@ -4,7 +4,7 @@
       <b-container class="d-flex justify-content-between">
         <Logo />
         <div class="d-flex">
-          <HeaderIcons />
+          <SocialIcons />
           <input id="burger" type="checkbox" />
 
           <label @click="toggleMenu()" class="float-right" for="burger">
@@ -15,9 +15,8 @@
 
           <nav :class="{ active: menuActive }">
             <ul :class="{ active: menuActive }">
-              <li><nuxt-link to="/blog">Blog</nuxt-link></li>
+              <li><nuxt-link to="/">Home</nuxt-link></li>
               <li><nuxt-link to="/fullpage">Full Page</nuxt-link></li>
-              <li><nuxt-link to="/blog">Link #3</nuxt-link></li>
             </ul>
           </nav>
         </div>
@@ -28,12 +27,12 @@
 
 <script>
 import Logo from '@/components/logo.vue'
-import HeaderIcons from '@/components/HeaderIcons.vue'
+import SocialIcons from '@/components/SocialIcons.vue'
 
 export default {
   components: {
     Logo,
-    HeaderIcons
+    SocialIcons
   },
   data() {
     return {
@@ -49,12 +48,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$white: white;
-$primary: #072142;
-
-.white {
-  color: $white;
-}
+@import '~/assets/scss/_colors.scss';
 
 .header {
   position: fixed;
@@ -77,6 +71,7 @@ input + label {
     width: 100%;
     height: 4px;
     top: 50%;
+    border-radius: 7px;
     margin-top: -1px;
     left: 0;
     display: block;
@@ -126,11 +121,13 @@ input ~ nav {
     text-align: center;
     list-style: none;
     position: absolute;
-    top: 35%;
+    flex-direction: column;
+    justify-content: center;
     left: 20%;
     right: 20%;
+    height: 100vh;
     &.active {
-      display: block;
+      display: flex;
     }
     > li {
       opacity: 0;
@@ -140,10 +137,10 @@ input ~ nav {
         text-decoration: none;
         text-transform: uppercase;
         color: $white;
-        font-weight: 700;
+        font-size: 80px;
+        font-weight: bold;
         font-family: sans-serif;
         display: block;
-        padding: 30px;
       }
     }
   }
